@@ -29,7 +29,6 @@ const modelPath = 'spaceship.json'
 
 const loader = new THREE.JSONLoader()
 loader.load(modelPath, geometry => {
-  console.log(geometry)
   spaceship = createSpaceship(geometry)
   scene.add(spaceship)
 })
