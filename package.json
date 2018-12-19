@@ -25,14 +25,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SimonHFrost/threejs-spaceship-boilerplate.git"
+    "url": "git+https://github.com/SimonHFrost/threejs-boilerplate.git"
   },
   "author": "Simon Frost",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SimonHFrost/threejs-spaceship-boilerplate/issues"
+    "url": "https://github.com/SimonHFrost/threejs-boilerplate/issues"
   },
-  "homepage": "https://github.com/SimonHFrost/threejs-spaceship-boilerplate#readme",
+  "homepage": "https://github.com/SimonHFrost/threejs-boilerplate#readme",
   "devDependencies": {
     "eslint": "^5.10.0",
     "eslint-config-standard": "^12.0.0",
