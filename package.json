@@ -1,16 +1,14 @@
 {
-  "name": "threejs-tapered-hair",
+  "name": "threejs-boilerplate",
   "description": "[![mit-licence](http://img.shields.io/:license-mit-blue.svg)](http://opensource.org/licenses/MIT) [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)",
   "version": "1.0.0",
   "main": "webpack.config.js",
   "dependencies": {
-    "bezier-easing": "^2.1.0",
     "ccapture.js": "^1.1.0",
     "dat.gui": "^0.7.2",
     "stats.js": "^0.17.0",
     "three": "0.95.0",
     "three-orbit-controls": "^82.1.0",
-    "three.meshline": "^1.1.0",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.5"

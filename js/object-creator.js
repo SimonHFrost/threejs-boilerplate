@@ -69,9 +69,9 @@ function createSpaceship (geometry) {
     material
   )
 
-  spaceship.scale.x = 1
-  spaceship.scale.y = 1
-  spaceship.scale.z = 1
+  spaceship.scale.x = 20
+  spaceship.scale.y = 20
+  spaceship.scale.z = 20
 
   return spaceship
 }
