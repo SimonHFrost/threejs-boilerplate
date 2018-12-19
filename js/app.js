@@ -1,7 +1,9 @@
+import * as THREE from 'three'
+
 import { initialize } from './initializer'
 import { exportAnimation } from './export-animation'
 
-import { createCube } from './object-creator'
+import { createCube, createSpaceship } from './object-creator'
 
 import Gui from './gui'
 
@@ -19,5 +21,15 @@ function autoRotate (toggle) {
   orbitControls.autoRotate = toggle
 }
 
-scene.add(createCube())
+// scene.add(createCube())
 const gui = Gui(doExportAnimation, autoRotate)
+
+let spaceship = null
+const modelPath = 'spaceship.json'
+
+const loader = new THREE.JSONLoader()
+loader.load(modelPath, geometry => {
+  console.log(geometry)
+  spaceship = createSpaceship(geometry)
+  scene.add(spaceship)
+})

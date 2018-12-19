@@ -99,6 +99,24 @@ function createGrid () {
   return gridObject
 }
 
+function createSpaceship (geometry) {
+  const material = new THREE.MeshLambertMaterial({
+    color: '#ed8989',
+    flatShading: true
+  })
+
+  const spaceship = new THREE.Mesh(
+    geometry,
+    material
+  )
+
+  spaceship.scale.x = 1
+  spaceship.scale.y = 1
+  spaceship.scale.z = 1
+
+  return spaceship
+}
+
 export {
   createAmbientLight,
   createDirectionalLight,
@@ -106,5 +124,6 @@ export {
   createStraightLine,
   convertPathToLine,
   createDebugObject,
-  createGrid
+  createGrid,
+  createSpaceship
 }
