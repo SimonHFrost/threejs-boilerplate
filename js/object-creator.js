@@ -1,5 +1,4 @@
 import * as THREE from 'three'
-import { MeshLine, MeshLineMaterial } from 'three.meshline'
 
 function createAmbientLight () {
   return new THREE.AmbientLight(0xEEEEEE, 0.75)
@@ -31,46 +30,6 @@ function createStraightLine (v1, v2, color) {
   )
 
   return new THREE.Line(geometry, material)
-}
-
-function convertPathToLine (path) {
-  const points = path.getPoints(1000)
-
-  const geometry = new THREE.Geometry()
-  points.forEach(point => {
-    const v = new THREE.Vector3(point.x, point.y, point.z)
-    geometry.vertices.push(v)
-  })
-
-  const line = new MeshLine()
-  // Second argument is width function
-  line.setGeometry(geometry, function (p) { return 0.4 * p + 0.6 })
-
-  const material = new MeshLineMaterial({ color: new THREE.Color(0x000000), lineWidth: 0.01 })
-
-  return new THREE.Mesh(line.geometry, material)
-}
-
-function createDebugObject (path) {
-  const debugObject = new THREE.Object3D()
-
-  let prevV2 = path.curves[0].v0
-
-  path.curves.forEach((curve, index) => {
-    debugObject.add(createCube(curve.v0, 'red'))
-
-    debugObject.add(createCube(curve.v1, 'red'))
-    debugObject.add(createStraightLine(curve.v1, prevV2, 'red'))
-    debugObject.add(createCube(curve.v2, 'red'))
-
-    if (index === path.curves.length - 1) {
-      debugObject.add(createStraightLine(curve.v2, curve.v3, 'red'))
-    }
-
-    prevV2 = curve.v2
-  })
-
-  return debugObject
 }
 
 function createGrid () {
@@ -122,8 +81,6 @@ export {
   createDirectionalLight,
   createCube,
   createStraightLine,
-  convertPathToLine,
-  createDebugObject,
   createGrid,
   createSpaceship
 }
